@@ -31,16 +31,16 @@ export function Navbar() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 border-b transition-colors',
         scrolled
-          ? 'border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80'
+          ? 'border-ink/10 bg-paper/80 backdrop-blur-md dark:border-paper/10 dark:bg-ink-950/80'
           : 'border-transparent bg-transparent',
       )}
     >
       <Container as="nav" className="flex h-16 items-center justify-between gap-4">
         <Link
           to="/"
-          className="rounded text-base font-bold tracking-tight text-slate-900 dark:text-white"
+          className="rounded text-base font-bold tracking-tight text-ink dark:text-paper"
         >
-          Vamsi<span className="text-navy-600 dark:text-navy-300">.</span>
+          Vamsi<span className="text-brand-600 dark:text-brand-300">.</span>
         </Link>
 
         {/* Desktop links */}
@@ -54,8 +54,8 @@ export function Navbar() {
                   className={cn(
                     'rounded-md px-3 py-2 text-sm font-medium transition-colors',
                     isActive
-                      ? 'text-navy-600 dark:text-navy-300'
-                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white',
+                      ? 'text-brand-600 dark:text-brand-300'
+                      : 'text-ink-600 hover:text-ink dark:text-ink-400 dark:hover:text-paper',
                   )}
                   aria-current={isActive ? 'true' : undefined}
                 >
@@ -79,7 +79,7 @@ export function Navbar() {
           </ButtonLink>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 md:hidden dark:border-slate-700 dark:text-slate-300"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-ink/15 text-ink-600 md:hidden dark:border-paper/20 dark:text-ink-400"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -91,14 +91,14 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-slate-200 bg-white md:hidden dark:border-slate-800 dark:bg-slate-950">
+        <div className="border-t border-ink/10 bg-paper md:hidden dark:border-paper/10 dark:bg-ink-950">
           <Container className="py-3">
             <ul className="flex flex-col">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <Link
                     to={`/#${item.id}`}
-                    className="block rounded-md px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                    className="block rounded-md px-3 py-2.5 text-base font-medium text-ink-600 hover:bg-ink/10 dark:text-ink-400 dark:hover:bg-ink-800"
                   >
                     {item.label}
                   </Link>

@@ -12,12 +12,12 @@ export function Experience() {
           <SectionHeading eyebrow="Experience" title="Where I've worked" />
         </AnimatedSection>
 
-        <ol className="mt-12 space-y-10 border-l border-slate-200 pl-8 dark:border-slate-800">
+        <ol className="mt-12 space-y-10 border-l border-ink/10 pl-8 dark:border-paper/10">
           {experience.map((job, i) => (
             <AnimatedSection as="li" key={`${job.company}-${job.period}`} delay={i * 0.08} className="relative">
               {/* Timeline node */}
               <span
-                className="absolute -left-[2.55rem] flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white text-navy-600 dark:border-slate-700 dark:bg-slate-900 dark:text-navy-300"
+                className="absolute -left-[2.55rem] flex h-7 w-7 items-center justify-center rounded-full border border-ink/10 bg-paper text-brand-600 dark:border-paper/20 dark:bg-ink-900 dark:text-brand-300"
                 aria-hidden="true"
               >
                 <Briefcase size={13} />
@@ -27,20 +27,20 @@ export function Experience() {
                 <h3 className="text-lg font-semibold">
                   {job.role}
                   {job.current && (
-                    <span className="ml-3 inline-flex items-center gap-1.5 rounded-full bg-navy-50 px-2.5 py-0.5 text-xs font-medium text-navy-700 dark:bg-navy-900/40 dark:text-navy-300">
-                      <span className="h-1.5 w-1.5 rounded-full bg-navy-500" />
+                    <span className="ml-3 inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700 dark:bg-brand-900/40 dark:text-brand-300">
+                      <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                       Current
                     </span>
                   )}
                 </h3>
-                <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                <span className="text-sm font-medium text-ink-500 dark:text-ink-400">
                   {job.period}
                 </span>
               </div>
-              <p className="mt-0.5 text-sm font-medium text-navy-600 dark:text-navy-300">
+              <p className="mt-0.5 text-sm font-medium text-brand-600 dark:text-brand-300">
                 {job.company} · {job.location}
               </p>
-              <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">{job.summary}</p>
+              <p className="mt-3 max-w-2xl text-ink-600 dark:text-ink-400">{job.summary}</p>
             </AnimatedSection>
           ))}
         </ol>

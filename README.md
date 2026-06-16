@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Portfolio — Nagasai Vamsi Chilakalapudi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for a Full-Stack AI Engineer. Single-page scroll (Hero, About, Skills,
+Experience, Projects, Contact) plus dynamic project case-study pages and a résumé view.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Vite + React + TypeScript**
+- **Tailwind CSS** (navy `#1F4E79` accent, class-based dark mode)
+- **React Router** — `/`, `/projects/:slug`, `/resume`, and a 404
+- **Framer Motion** — tasteful fade/slide-on-scroll (respects `prefers-reduced-motion`)
+- **lucide-react** icons, **react-helmet-async** for per-page SEO
 
-## React Compiler
+## Develop
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # type-check + production build to dist/
+npm run preview  # preview the production build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Editing content
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+All content lives in typed files under `src/content/` — no CMS:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `profile.ts` — name, title, tagline, about, email/phone, social links, résumé path
+- `skills.ts` — grouped skill chips
+- `experience.ts` — timeline entries
+- `projects.ts` — project case studies (the `/projects/:slug` pages read from here)
+- `nav.ts` — anchored nav sections
+
+## Things to replace before going live
+
+1. **Résumé** — `public/resume.pdf` is a generated placeholder. Drop in the real PDF (same name).
+2. **Contact form** — set `FORMSPREE_ENDPOINT` in `src/components/ContactForm.tsx` to a
+   [Formspree](https://formspree.io) form URL. Until then the form falls back to opening a
+   pre-filled `mailto:` to the address in `profile.ts`. A hidden honeypot field blocks bots.
+3. **Domain** — update the production URL in three places: `src/components/Seo.tsx`
+   (`SITE_URL`), `public/robots.txt`, and `public/sitemap.xml` (currently `https://vamsi.dev`).
+4. **OG image** — `public/og-image.svg` is provided. Some social scrapers prefer PNG/JPG; export
+   a 1200×630 PNG and point `Seo.tsx`'s `DEFAULT_IMAGE` at it for best link previews.
+
+## Deploy (static SPA)
+
+Build command `vite build`, output `dist`. SPA deep-link rewrites are pre-configured:
+
+- **Vercel** — `vercel.json` rewrites all routes to `/index.html`.
+- **Netlify** — `public/_redirects` does the same.
+
+## Notes
+
+- `lucide-react` is pinned to `0.408.0` (the installed `1.x` dropped the GitHub/LinkedIn brand
+  icons and changed the `size` prop type).
+- JSON-LD `Person` schema and the no-flash theme script live in `index.html`.

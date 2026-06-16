@@ -13,7 +13,7 @@ export default function Resume() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Résumé</h1>
-              <p className="mt-2 text-slate-600 dark:text-slate-400">
+              <p className="mt-2 text-ink-600 dark:text-ink-400">
                 {profile.name} · {profile.title}
               </p>
             </div>
@@ -23,14 +23,14 @@ export default function Resume() {
             </ButtonLink>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900">
+          <div className="mt-8 overflow-hidden rounded-xl border border-ink/10 bg-ink/10 dark:border-paper/10 dark:bg-ink-900">
             <object
               data={profile.resumeUrl}
               type="application/pdf"
               className="h-[80vh] w-full"
               aria-label="Résumé PDF preview"
             >
-              <div className="p-10 text-center text-slate-600 dark:text-slate-400">
+              <div className="p-10 text-center text-ink-600 dark:text-ink-400">
                 <p>Your browser can't display the embedded PDF.</p>
                 <ButtonLink href={profile.resumeUrl} download className="mt-4">
                   <Download size={18} aria-hidden="true" />

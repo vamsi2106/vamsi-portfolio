@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Nagasai Vamsi Chilakalapudi — Full-Stack AI Engineer">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0c1a29"/>
-      <stop offset="1" stop-color="#1F4E79"/>
-    </linearGradient>
-    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.5" fill="#ffffff" fill-opacity="0.06"/>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#161410" stroke-opacity="0.05" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
-  <text x="80" y="250" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600" fill="#7ea4d6" letter-spacing="3">FULL-STACK AI ENGINEER</text>
-  <text x="80" y="350" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800" fill="#ffffff">Nagasai Vamsi</text>
-  <text x="80" y="430" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800" fill="#ffffff">Chilakalapudi</text>
-  <text x="80" y="520" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400" fill="#aec7e7">LLM agents · RAG · React/Next.js · Python/Node · Azure/AWS</text>
-  <text x="80" y="585" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="500" fill="#7ea4d6">github.com/vamsi2106 · Hyderabad, India</text>
+  <rect width="1200" height="630" fill="#FBFAF7"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g font-family="Inter, Arial, sans-serif">
+    <circle cx="84" cy="232" r="6" fill="#d75f1e"/>
+    <text x="104" y="240" font-size="26" font-weight="600" fill="#bd4e15" letter-spacing="4">FULL-STACK AI ENGINEER</text>
+    <text x="80" y="340" font-size="78" font-weight="700" fill="#161410" letter-spacing="-2">Nagasai Vamsi</text>
+    <text x="80" y="424" font-size="78" font-weight="700" fill="#161410" letter-spacing="-2">Chilakalapudi</text>
+    <line x1="84" y1="478" x2="84" y2="556" stroke="#d75f1e" stroke-width="3"/>
+    <text x="108" y="510" font-size="28" font-weight="400" fill="#4a473f">LLM agents · RAG · React/Next.js · Python/Node · Azure/AWS</text>
+    <text x="108" y="548" font-size="24" font-weight="500" fill="#6c685e">github.com/vamsi2106 · Hyderabad, India</text>
+  </g>
 </svg>

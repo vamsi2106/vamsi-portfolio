@@ -23,7 +23,7 @@ interface Errors {
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const fieldClasses =
-  'w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-navy-500 focus:outline-none focus:ring-2 focus:ring-navy-500/40 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500'
+  'w-full rounded-lg border border-ink/15 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/40 dark:border-paper/20 dark:bg-ink-900 dark:text-paper dark:placeholder:text-ink-500'
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>('idle')
@@ -103,7 +103,7 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">
+          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink-600 dark:text-ink-400">
             Name
           </label>
           <input
@@ -123,7 +123,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">
+          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink-600 dark:text-ink-400">
             Email
           </label>
           <input
@@ -144,7 +144,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">
+        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink-600 dark:text-ink-400">
           Message
         </label>
         <textarea

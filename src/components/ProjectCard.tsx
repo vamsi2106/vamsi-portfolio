@@ -10,12 +10,12 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="group relative flex h-full flex-col p-6 transition-all hover:-translate-y-1 hover:border-navy-300 hover:shadow-md dark:hover:border-navy-700">
+    <Card className="group relative flex h-full flex-col rounded-xl p-6 transition-colors duration-200 hover:border-ink/25 hover:bg-paper-100/60 dark:hover:border-paper/25 dark:hover:bg-ink-800/60">
       <div className="flex items-start justify-between gap-3">
         <h3 className="text-lg font-semibold leading-snug">
           <Link
             to={`/projects/${project.slug}`}
-            className="before:absolute before:inset-0 before:content-[''] hover:text-navy-600 dark:hover:text-navy-300"
+            className="before:absolute before:inset-0 before:content-[''] group-hover:text-brand-600 dark:group-hover:text-brand-400"
           >
             {project.title}
           </Link>
@@ -23,17 +23,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <ArrowUpRight
           size={20}
           aria-hidden="true"
-          className="shrink-0 text-slate-400 transition-colors group-hover:text-navy-600 dark:group-hover:text-navy-300"
+          className="shrink-0 text-ink-400 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand-600 dark:group-hover:text-brand-400"
         />
       </div>
 
       {project.context && (
-        <span className="mt-2 w-fit rounded bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+        <span className="mt-2 w-fit rounded border border-ink/10 px-2 py-0.5 text-xs font-medium text-ink-500 dark:border-paper/15 dark:text-ink-400">
           {project.context}
         </span>
       )}
 
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-600 dark:text-ink-400">
         {project.summary}
       </p>
 
@@ -51,13 +51,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </ul>
 
       {project.links.github && (
-        <div className="mt-5 border-t border-slate-100 pt-4 dark:border-slate-800">
+        <div className="mt-5 border-t border-ink/10 pt-4 dark:border-paper/10">
           {/* relative z-10 so this link sits above the card's overlay link */}
           <a
             href={project.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative z-10 inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-navy-600 dark:text-slate-400 dark:hover:text-navy-300"
+            className="relative z-10 inline-flex items-center gap-1.5 text-sm font-medium text-ink-600 hover:text-brand-600 dark:text-ink-400 dark:hover:text-brand-400"
           >
             <Github size={15} aria-hidden="true" />
             View code

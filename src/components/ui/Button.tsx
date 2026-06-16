@@ -8,19 +8,20 @@ type Variant = 'primary' | 'secondary' | 'ghost'
 type Size = 'sm' | 'md' | 'lg'
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-navy-400 dark:focus-visible:ring-offset-slate-950'
+  'group/btn inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors duration-200 disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper dark:focus-visible:ring-offset-ink-950'
 
 const variants: Record<Variant, string> = {
-  primary: 'bg-navy-600 text-white hover:bg-navy-700 active:bg-navy-800',
+  primary:
+    'bg-ink text-paper hover:bg-ink-700 dark:bg-paper dark:text-ink dark:hover:bg-paper-200',
   secondary:
-    'border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800',
-  ghost: 'text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800',
+    'border border-ink/15 bg-transparent text-ink hover:border-ink/40 hover:bg-ink/[0.03] dark:border-paper/20 dark:text-paper dark:hover:border-paper/50 dark:hover:bg-paper/[0.06]',
+  ghost: 'text-ink-600 hover:bg-ink/[0.04] dark:text-paper/80 dark:hover:bg-paper/[0.06]',
 }
 
 const sizes: Record<Size, string> = {
-  sm: 'h-9 px-3 text-sm',
+  sm: 'h-9 px-4 text-sm',
   md: 'h-11 px-5 text-sm',
-  lg: 'h-12 px-6 text-base',
+  lg: 'h-12 px-7 text-base',
 }
 
 /** Compose the button class string — shared by buttons, anchors, and router links. */

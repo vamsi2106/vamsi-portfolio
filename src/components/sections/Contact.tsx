@@ -20,18 +20,18 @@ export function Contact() {
             <div className="mt-8 space-y-3">
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-3 text-slate-700 hover:text-navy-600 dark:text-slate-300 dark:hover:text-navy-300"
+                className="flex items-center gap-3 text-ink-600 hover:text-brand-600 dark:text-ink-400 dark:hover:text-brand-300"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-50 text-navy-600 dark:bg-navy-900/40 dark:text-navy-300">
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-900/40 dark:text-brand-300">
                   <Mail size={18} aria-hidden="true" />
                 </span>
                 {profile.email}
               </a>
               <a
                 href={`tel:${profile.phone.replace(/\s+/g, '')}`}
-                className="flex items-center gap-3 text-slate-700 hover:text-navy-600 dark:text-slate-300 dark:hover:text-navy-300"
+                className="flex items-center gap-3 text-ink-600 hover:text-brand-600 dark:text-ink-400 dark:hover:text-brand-300"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-50 text-navy-600 dark:bg-navy-900/40 dark:text-navy-300">
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-900/40 dark:text-brand-300">
                   <Phone size={18} aria-hidden="true" />
                 </span>
                 {profile.phone}

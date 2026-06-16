@@ -1,4 +1,4 @@
-import { ArrowRight, Download, MapPin } from 'lucide-react'
+import { ArrowRight, ArrowDown } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Container } from '../Container'
 import { SocialLinks } from '../SocialLinks'
@@ -9,71 +9,74 @@ export function Hero() {
   const reduce = useReducedMotion()
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 16 },
     show: { opacity: 1, y: 0 },
   }
   const container = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+    show: { transition: { staggerChildren: 0.07, delayChildren: 0.04 } },
   }
 
   return (
     <section id="hero" className="relative isolate overflow-hidden">
-      {/* Background: dotted grid + soft navy glow */}
-      <div className="bg-grid absolute inset-0 -z-10" aria-hidden="true" />
-      <div
-        className="absolute -top-32 left-1/2 -z-10 h-[32rem] w-[64rem] -translate-x-1/2 rounded-full bg-navy-500/10 blur-3xl dark:bg-navy-500/15"
-        aria-hidden="true"
-      />
+      <div className="bg-hairline absolute inset-0 -z-10" aria-hidden="true" />
 
       <Container className="flex min-h-[92vh] flex-col justify-center py-28">
         <motion.div
           variants={reduce ? undefined : container}
           initial={reduce ? false : 'hidden'}
           animate={reduce ? undefined : 'show'}
-          className="max-w-3xl"
+          className="max-w-4xl"
         >
-          <motion.p
-            variants={item}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-sm font-medium text-slate-600 backdrop-blur dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-400"
-          >
-            <MapPin size={14} aria-hidden="true" className="text-navy-600 dark:text-navy-300" />
-            {profile.location}
-          </motion.p>
+          <motion.div variants={item} className="mb-8 flex items-center gap-3">
+            <span className="flex items-center gap-2 eyebrow text-brand-600 dark:text-brand-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-500" aria-hidden="true" />
+              {profile.title}
+            </span>
+            <span className="h-px flex-1 max-w-[6rem] bg-ink/15 dark:bg-paper/15" aria-hidden="true" />
+            <span className="eyebrow text-ink-400">{profile.location}</span>
+          </motion.div>
 
           <motion.h1
             variants={item}
-            className="text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-6xl"
+            className="text-balance text-[2.75rem] font-bold leading-[1.02] tracking-tight sm:text-7xl"
           >
             {profile.name}
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-4 text-xl font-semibold text-navy-600 sm:text-2xl dark:text-navy-300"
-          >
-            {profile.title}
-          </motion.p>
-
-          <motion.p
-            variants={item}
-            className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400"
+            className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-600 sm:text-xl dark:text-ink-400"
           >
             {profile.tagline}
           </motion.p>
 
-          <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-3">
+          <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
             <RouterButton to="/#projects" size="lg">
               View Projects
-              <ArrowRight size={18} aria-hidden="true" />
+              <ArrowRight
+                size={18}
+                aria-hidden="true"
+                className="transition-transform duration-200 group-hover/btn:translate-x-1"
+              />
             </RouterButton>
             <ButtonLink href={profile.resumeUrl} download variant="secondary" size="lg">
-              <Download size={18} aria-hidden="true" />
               Download Résumé
             </ButtonLink>
             <SocialLinks className="ml-1" />
           </motion.div>
         </motion.div>
+
+        <motion.a
+          href="/#about"
+          initial={reduce ? false : { opacity: 0 }}
+          animate={reduce ? undefined : { opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="mt-20 inline-flex w-fit items-center gap-2 text-sm text-ink-500 transition-colors hover:text-ink dark:text-ink-400 dark:hover:text-paper"
+        >
+          <ArrowDown size={16} aria-hidden="true" className="animate-bounce" />
+          Scroll to explore
+        </motion.a>
       </Container>
     </section>
   )

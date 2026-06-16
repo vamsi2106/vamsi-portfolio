@@ -19,7 +19,7 @@ export function About() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-3">
           <AnimatedSection className="lg:col-span-2" delay={0.05}>
-            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+            <p className="text-lg leading-relaxed text-ink-600 dark:text-ink-400">
               {profile.about}
             </p>
           </AnimatedSection>
@@ -29,12 +29,10 @@ export function About() {
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-900/50"
+                  className="group rounded-xl border border-ink/10 bg-paper-100 p-5 transition-colors duration-200 hover:border-ink/25 dark:border-paper/10 dark:bg-ink-900/50 dark:hover:border-paper/25"
                 >
-                  <dt className="text-2xl font-bold text-navy-600 dark:text-navy-300">
-                    {s.value}
-                  </dt>
-                  <dd className="mt-1 text-sm text-slate-600 dark:text-slate-400">{s.label}</dd>
+                  <dt className="text-3xl font-bold text-ink dark:text-paper">{s.value}</dt>
+                  <dd className="mt-1 eyebrow text-ink-400">{s.label}</dd>
                 </div>
               ))}
             </dl>

@@ -10,7 +10,7 @@ interface SocialLinksProps {
 }
 
 const iconLink =
-  'inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 transition-colors hover:border-navy-500 hover:text-navy-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-navy-400 dark:hover:text-navy-300'
+  'inline-flex h-10 w-10 items-center justify-center rounded-lg border border-ink/15 text-ink-600 transition-colors hover:border-brand-500 hover:text-brand-600 dark:border-paper/20 dark:text-ink-400 dark:hover:border-brand-400 dark:hover:text-brand-300'
 
 export function SocialLinks({ className, includeEmail = false, size = 18 }: SocialLinksProps) {
   return (

@@ -8,7 +8,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="scroll-mt-20 border-y border-slate-200 bg-slate-50/60 py-20 sm:py-28 dark:border-slate-800 dark:bg-slate-900/30"
+      className="scroll-mt-20 border-y border-ink/10 bg-paper-100/60 py-20 sm:py-28 dark:border-paper/10 dark:bg-ink-900/30"
     >
       <Container>
         <AnimatedSection>
