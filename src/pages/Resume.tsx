@@ -17,7 +17,7 @@ export default function Resume() {
                 {profile.name} · {profile.title}
               </p>
             </div>
-            <ButtonLink href={profile.resumeUrl} download>
+            <ButtonLink href={profile.resumeUrl} download={profile.resumeDownloadName}>
               <Download size={18} aria-hidden="true" />
               Download PDF
             </ButtonLink>
@@ -32,7 +32,7 @@ export default function Resume() {
             >
               <div className="p-10 text-center text-ink-600 dark:text-ink-400">
                 <p>Your browser can't display the embedded PDF.</p>
-                <ButtonLink href={profile.resumeUrl} download className="mt-4">
+                <ButtonLink href={profile.resumeUrl} download={profile.resumeDownloadName} className="mt-4">
                   <Download size={18} aria-hidden="true" />
                   Download the résumé instead
                 </ButtonLink>

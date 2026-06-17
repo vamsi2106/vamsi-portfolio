@@ -60,7 +60,7 @@ export function Hero() {
                 className="transition-transform duration-200 group-hover/btn:translate-x-1"
               />
             </RouterButton>
-            <ButtonLink href={profile.resumeUrl} download variant="secondary" size="lg">
+            <ButtonLink href={profile.resumeUrl} download={profile.resumeDownloadName} variant="secondary" size="lg">
               Download Résumé
             </ButtonLink>
             <SocialLinks className="ml-1" />

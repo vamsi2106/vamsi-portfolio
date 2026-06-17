@@ -70,7 +70,7 @@ export function Navbar() {
           <ThemeToggle />
           <ButtonLink
             href={profile.resumeUrl}
-            download
+            download={profile.resumeDownloadName}
             size="sm"
             className="hidden sm:inline-flex"
           >
@@ -105,7 +105,7 @@ export function Navbar() {
                 </li>
               ))}
               <li className="mt-2">
-                <ButtonLink href={profile.resumeUrl} download size="md" className="w-full">
+                <ButtonLink href={profile.resumeUrl} download={profile.resumeDownloadName} size="md" className="w-full">
                   <Download size={16} aria-hidden="true" />
                   Download Résumé
                 </ButtonLink>

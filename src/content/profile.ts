@@ -13,6 +13,7 @@ export interface Profile {
   email: string
   phone: string
   resumeUrl: string
+  resumeDownloadName: string
   social: {
     github: string
     linkedin: string
@@ -31,6 +32,7 @@ export const profile: Profile = {
   email: 'saivamsi1121@gmail.com',
   phone: '+91 81068 37185',
   resumeUrl: '/resume.pdf',
+  resumeDownloadName: 'Nagasai_Vamsi_Chilakalapudi_Resume.pdf',
   social: {
     github: 'https://github.com/vamsi2106',
     linkedin: 'https://linkedin.com/in/chilakalapudi-nagasai-vamsi',
